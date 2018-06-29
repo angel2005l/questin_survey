@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Archetype Created Web Application</display-name>
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>IndexController</servlet-name>
+		<servlet-class>com.xinhai.controller.IndexController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IndexController</servlet-name>
+		<url-pattern>/indexController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>QuestionController</servlet-name>
+		<servlet-class>com.xinhai.controller.QuestionController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QuestionController</servlet-name>
+		<url-pattern>/question</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name>ChacterEncoding</filter-name>
+		<filter-class>com.xinhai.filter.ChacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>ChacterEncoding</filter-name>
+		<url-pattern>/emp/*</url-pattern>
+	</filter-mapping>
+</web-app>
